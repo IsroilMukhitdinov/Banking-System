@@ -43,10 +43,11 @@ public class User {
 		return false;
 	}
 	
-	public boolean withdraw(final int amount) {
-		if (amount >= 0 && amount <= balance) {
+	public boolean withdraw(User user,final int amount) {
+		if (amount >= 0 && amount <= balance && user != null) {
 			balance = balance - amount;
 			transactionList.add(new Transaction("Withdraw",amount,LocalDateTime.now()));
+			user.deposit(amount);
 			return true;
 		}
 		return false;

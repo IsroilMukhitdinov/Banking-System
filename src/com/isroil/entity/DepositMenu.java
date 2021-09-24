@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class OperationMenu {
+public class DepositMenu {
 
 	private static Label amountLabel;
 	private static TextField amountField;
@@ -19,7 +19,7 @@ public class OperationMenu {
 	private static Scene scene;
 	private static Stage stage;
 
-	public static void display(User user, final Type type) {
+	public static void display(User user) {
 
 		amountLabel = new Label("Amount");
 		amountLabel.setPrefHeight(50);
@@ -35,10 +35,7 @@ public class OperationMenu {
 		confirmButton.setOnAction(e -> {
 			stage.close();
 			int amount = Integer.parseInt(amountField.getText());
-			if (type == Type.DEPOSIT)
-				user.deposit(amount);
-			if (type == Type.WITHDRAW)
-				user.withdraw(amount);
+			user.deposit(amount);
 		});
 
 		root = new GridPane();

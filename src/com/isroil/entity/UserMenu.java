@@ -23,14 +23,14 @@ public class UserMenu {
 		depositButton.setPrefWidth(200);
 		depositButton.setOnAction(e -> {
 			stage.close();
-			OperationMenu.display(user,Type.DEPOSIT);
+			DepositMenu.display(user);
 		});
 		withdrawButton = new Button("Withdraw");
 		withdrawButton.setPrefHeight(50);
 		withdrawButton.setPrefWidth(200);
 		withdrawButton.setOnAction(e -> {
 			stage.close();
-			OperationMenu.display(user,Type.WITHDRAW);
+			WithdrawMenu.display(user);
 		});
 		transactionsButton = new Button("Transactions");
 		transactionsButton.setPrefHeight(50);
